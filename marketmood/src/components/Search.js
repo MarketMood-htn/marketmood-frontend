@@ -3,6 +3,7 @@ import SearchResult from "./SearchResult";
 
 import {useState} from 'react';
 import axios from 'axios';
+import Activity from "./Activity";
 
 const Search = () => {
     const [query, setQuery] = useState("")
@@ -16,6 +17,7 @@ const Search = () => {
 
     const handleSubmit = () => {
         getStocks(query);
+        setSeeDetails(false);
     } 
 
     const getStocks = async (ticker) => {
@@ -56,14 +58,22 @@ const Search = () => {
         </div>
         <div className="flex w-full justify-center">
         {displayStock ? 
-            <SearchResult displayStock={displayStock}>
+            <SearchResult displayStock={displayStock} text={seeDetails ? "See Less" : "See More"} onclick={() => setSeeDetails(prev => !prev)}>
             </SearchResult>
             :
             <div></div>
         }
         </div>
-        <div>
-            {seeDetails ? <div></div> : <div></div>}
+        <div className="flex w-full justify-center ">
+            {seeDetails ? 
+                <Activity 
+                    perception={stats.prediction[0]} 
+                    timeUpdated={Math.floor(Math.random() * (15 - 3) + 3)}
+                    color = {stats.prediction[0] === 'positive' ? 'green' : stats.prediction[0] === 'neutral' ? 'black' : 'red'}
+                    articles={displayStock.all_articles}
+                    ticker={displayStock.ticker.toUpperCase()}
+                /> : 
+                <div></div>}
         </div>
         </>
     )
