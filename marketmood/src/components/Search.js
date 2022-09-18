@@ -7,6 +7,7 @@ import axios from 'axios';
 const Search = () => {
     const [query, setQuery] = useState("")
     const [displayStock, setDisplayStock] = useState(null);
+    const [stats, setStats] = useState(null)
     const [seeDetails, setSeeDetails] = useState(false)
 
     const handleChange = (event) => {
@@ -18,11 +19,30 @@ const Search = () => {
     } 
 
     const getStocks = async (ticker) => {
-        console.log(ticker);
         await axios.get('http://127.0.0.1:8000/stock/ticker/' + ticker)
         .then(resp => {
             console.log(resp.data);
-            setDisplayStock(resp.data)
+            setDisplayStock(resp.data);
+            const articles = resp.data.all_articles;
+
+            let values = { positive: 0, neutral: 0, negative: 0 }
+            let prediction = 'neutral';
+            for (var i = 0; i < articles.length; i++) {
+                values.positive += articles[i].positive
+                values.neutral += articles[i].neutral
+                values.negative += articles[i].negative            
+            }
+            values.positive /= articles.length;
+            values.neutral /= articles.length;
+            values.negative /= articles.length;
+            
+            let placeHolder = [['positive', values.positive], ['negative', values.negative], ['neutral', values.neutral]]
+            placeHolder.sort((a,b) => a[1]-b[1]);
+            placeHolder.reverse();
+            prediction = placeHolder[0]
+            values['prediction'] = prediction;
+            values['articles'] = articles;
+            setStats(values);
         })
         .catch(error => console.log(error));
     }
