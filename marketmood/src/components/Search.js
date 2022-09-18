@@ -1,34 +1,45 @@
 import logo from "../assets/Logo.png";
+import SearchResult from "./SearchResult";
+
 import {useState} from 'react';
 import axios from 'axios';
 
 const Search = () => {
     const [query, setQuery] = useState("")
-    const [displayStocks, setDisplayStocks] = useState(null);
+    const [displayStock, setDisplayStock] = useState(null);
 
     const handleChange = (event) => {
         setQuery(event.target.value);
     }
 
-    const handleSubmit = async() => {
+    const handleSubmit = () => {
         getStocks(query);
     } 
 
     const getStocks = async (ticker) => {
-        axios.get('http://127.0.0.0:8000/stock/ticker/' + ticker)
+        console.log(ticker);
+        await axios.get('http://127.0.0.1:8000/stock/ticker/' + ticker)
         .then(resp => {
             console.log(resp.data);
-            setDisplayStocks(resp.data)
+            setDisplayStock(resp.data)
         })
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
     }
 
     return (
+        <>
         <div class="search">
-            <img src={logo} class="headerLogo"/>
+            <img src={logo} className="headerLogo"/>
             <input type="text" id="searchBar" value={query} onChange={handleChange} name="searchInput" placeholder="Search Company by Ticker"/>
-            <button onclick={handleSubmit} id="searchSubmit">Search</button>
+            <button onClick={handleSubmit} id="searchSubmit">Search</button>
         </div>
+        {displayStock ? 
+            <SearchResult displayStock={displayStock}>
+            </SearchResult>
+            :
+            <div></div>
+        }
+        </>
     )
 }
 

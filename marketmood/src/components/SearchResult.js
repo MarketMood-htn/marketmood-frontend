@@ -1,7 +1,11 @@
-function SeearchResults(props) {
+function SearchResult({
+    displayStock,
+}) {
     return (
         <div class="searchResult">
-            <p>{props.ticker}    |  {props.name}</p>
+            <p>{displayStock.ticker}    |  {displayStock.name}</p>
         </div>
     )
 }
+
+export default SearchResult
