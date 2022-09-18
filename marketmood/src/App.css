@@ -81,6 +81,7 @@ body {
 .headerLogo {
   width:20vw;
   margin-left:5vw;
+  display:inline-block;
 }
 
 .header {
@@ -162,6 +163,43 @@ body {
   top:-10vw;
   left:-2vw;
   width:20vw;
+}
+
+.search {
+  width:100vw;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#searchBar {
+  display: inline-block;
+  vertical-align: top;
+  margin-top:3vw;
+  margin-left:3vw;
+  background-color:white;
+  border:none;
+  border-radius:50px;
+  width:50vw;
+  height:1vw;
+  font-size:1.5vw;
+  color:black;
+  padding:1.5vw;
+}
+
+#searchSubmit {
+  display: inline-block;
+  vertical-align: top;
+  margin-top:3vw;
+  margin-left:1vw;
+  background-color:#5BCEC9;
+  border:none;
+  border-radius:50px;
+  width:12vw;
+  height:4vw;
+  font-size:1.5vw;
+  font-weight:bold;
+  color:white;
+  padding:1vw;
 }
 
 @keyframes App-logo-spin {
