@@ -19,7 +19,7 @@ body {
 
 .App-header {
   background-color: #E7E7E7;
-  min-height: 15vh;
+  min-height: 10vw;
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -62,7 +62,25 @@ body {
   border: #FA9F42 solid 2px;
 }
 
-.moodboardButton a {
+
+.moodboardButtonEnd {
+  width:15vw;
+  min-height: 5vh;
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #FA9F42;
+  padding: 1vw;
+  border-radius: 50px;
+  border: #FA9F42 solid 2px;
+  margin-bottom:10vw;
+}
+
+
+.moodboardButton a, .moodboardButtonEnd a {
   text-decoration:none;
   color: white;
   font-weight:bold;
@@ -87,6 +105,7 @@ body {
 .header {
   display:inline-block;
   vertical-align:top;
+  margin-bottom:0;
 }
 
 .headerTitle {
@@ -163,6 +182,8 @@ body {
   top:-10vw;
   left:-2vw;
   width:20vw;
+  margin-bottom:-10vw;
+  height:auto;
 }
 
 .search {
@@ -206,6 +227,35 @@ body {
   color:black;
   background:white;
   border-radius: 50px;
+}
+
+.info {
+  margin-left:5vw;
+}
+
+.info div {
+  display: inline-block;
+  width:20vw;
+  margin-left:2vw;
+}
+
+.info h2 {
+  background-color: #5BCEC9;
+  border-radius: 50px;
+  padding: 2vw;
+  width: 8vw;
+  color:white;
+}
+
+.info div p {
+  background-color: white;
+  border-radius: 50px;
+  padding: 2vw;
+}
+
+.info1 p {
+  position:relative;
+  padding-top:5vw;
 }
 
 @keyframes App-logo-spin {
