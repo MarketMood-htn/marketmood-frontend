@@ -7,6 +7,7 @@ import axios from 'axios';
 const Search = () => {
     const [query, setQuery] = useState("")
     const [displayStock, setDisplayStock] = useState(null);
+    const [seeDetails, setSeeDetails] = useState(false)
 
     const handleChange = (event) => {
         setQuery(event.target.value);
@@ -33,12 +34,17 @@ const Search = () => {
             <input type="text" id="searchBar" value={query} onChange={handleChange} name="searchInput" placeholder="Search Company by Ticker"/>
             <button onClick={handleSubmit} id="searchSubmit">Search</button>
         </div>
+        <div className="flex w-full justify-center">
         {displayStock ? 
             <SearchResult displayStock={displayStock}>
             </SearchResult>
             :
             <div></div>
         }
+        </div>
+        <div>
+            {seeDetails ? <div></div> : <div></div>}
+        </div>
         </>
     )
 }
