@@ -1,14 +1,19 @@
 import logo from "../assets/Logo.png";
-function Topbar() {
+
+function Search() {
+    const [query, setQuery] = setState("")
+    const handleSubmit = () => {
+
+    } 
     return (
         <div class="search">
             <form>
             <img src={logo} class="headerLogo"/>
             <input type="text" id="searchBar" name="searchInput" placeholder="Search Company by Ticker"/>
-            <input type="submit" id="searchSubmit" value="Search"/>
+            <button onclick={handleSubmit} id="searchSubmit">Search</button>
         </form>
         </div>
     )
 }
 
-export default Topbar;
+export default Search;
