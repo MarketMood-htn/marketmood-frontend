@@ -8,7 +8,7 @@ function Header() {
             <div class="headerLeft">
                 <img src={logo} class="headerLogo"/>
                 <h1 class="headerTitle">MARKETMOOD</h1>
-                <p1 class="headerPara">Market perception tracking for trading made easy by natural language processing. </p1>
+                <p1 class="headerPara">Market perception tracking for trading made easy by AI natural language processing. </p1>
             </div>
             <div class="headerRight">
                 <div class="headerRightDiv1">
