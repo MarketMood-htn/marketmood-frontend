@@ -5,11 +5,11 @@ const Layout = () => {
     <>
       <nav class="App-header">
         <ul>
-          <li>
-            <Link to="/">Home</Link>
+          <li class="homeButton">
+            <Link to="/">About us</Link>
           </li>
-          <li>
-            <Link to="/moodboard">Moodboard</Link>
+          <li class="moodboardButton">
+            <Link to="/moodboard">MOODboard</Link>
           </li>
         </ul>
       </nav>

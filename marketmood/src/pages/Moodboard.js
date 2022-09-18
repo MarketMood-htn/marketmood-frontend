@@ -1,10 +1,8 @@
-import React from 'react';
-import ReactDOM from "react-dom/client";
-
+import Topbar from "../components/Topbar.js";
 function Moodboard() {
   return (
     <>
-        <h1>hello</h1>
+        <Topbar />
     </>
   );
 }

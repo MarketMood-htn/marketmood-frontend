@@ -1,3 +1,7 @@
+body {
+  background-color: #E7E7E7;
+}
+
 .App {
   text-align: center;
 }
@@ -15,7 +19,7 @@
 
 .App-header {
   background-color: #E7E7E7;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -24,8 +28,140 @@
   color: white;
 }
 
+.homeButton {
+  display: inline;
+  align-items: start;
+  justify-content: left;
+  margin-left: 2vw;
+  margin-right: 0;
+  position:relative;
+  top: 20px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: none;
+  padding: 1vw;
+  border-radius: 50px;
+  border: black solid 2px;
+}
+
+.moodboardButton {
+  width:15vw;
+  min-height: 5vh;
+  display: inline;
+  align-items: start;
+  justify-content: left;
+  margin-left: 1vw;
+  margin-right: 5vw;
+  position:relative;
+  top: 20px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #FA9F42;
+  padding: 1vw;
+  border-radius: 50px;
+  border: #FA9F42 solid 2px;
+}
+
+.moodboardButton a {
+  text-decoration:none;
+  color: white;
+  font-weight:bold;
+}
+
+.homeButton a {
+  text-decoration:none;
+  color: black;
+  font-weight:bold;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.headerLogo {
+  width:20vw;
+  margin-left:5vw;
+}
+
+.header {
+  display:inline-block;
+  vertical-align:top;
+}
+
+.headerTitle {
+  color:black;
+  font-size:7vw;
+  padding-left:5vw;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+.headerPara {
+  margin-top:0px;
+  color:black;
+  display:block;
+  font-size:20px;
+  padding-left:5.1vw;
+  white-space:pre-line;
+}
+
+.headerLeft {
+  display:inline-block;
+  width:54vw;
+  margin-right: 10vw;
+}
+
+.headerRight {
+  display:inline-block;
+  vertical-align:top;
+  width:35vw;
+}
+
+.headerRight img, .headerRightDiv2 {
+  width:15vw;
+  height:auto;
+  display:inline-block;
+  vertical-align:top;
+  margin-right:1vw;
+  border-radius: 50px;
+  position:relative;
+}
+
+.headerRightDiv1 {
+  width: 15vw;
+  height:9vw;
+  margin-bottom:1vw;
+  display:inline-block;
+  background-color:#5BCEC9;
+  margin-left:16vw;
+  border-radius: 50px;
+  position:relative;
+}
+
+.headerRightDiv1 p1, p2 {
+  position:relative;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  top:2vw;
+  color:white;
+  font-size:1.5vw;
+}
+
+.headerRightDiv1 p1 {
+  font-size:3vw;
+  margin-top:0;
+}
+
+.headerRightDiv2 p1 {
+  font-size:3vw;
+  margin-top:0;
+}
+
+#manageMoney {
+  position:relative;
+  top:-10vw;
+  left:-2vw;
+  width:20vw;
 }
 
 @keyframes App-logo-spin {
